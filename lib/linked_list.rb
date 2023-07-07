@@ -9,13 +9,49 @@ class LinkedList
         if @head.nil?
             @head = Node.new(data)
         else
-            last_node = head
-            while !last_node.next_node.nil?
-                last_node = last_node.next_node
+            current_node = head
+            while current_node.next_node != nil
+                current_node = current_node.next_node
             end
-            last_node.next_node = Node.new(data)
-        end
 
+            current_node.next_node = Node.new(data)
+        end
     end
 
+    def count
+        current_node = head
+        current_count = 0
+        
+        while !current_node.nil?
+            current_count += 1
+            current_node = current_node.next_node
+        end
+
+        return current_count
+    end
+
+    def to_string
+        current_node = head
+        list_string = ""
+
+        # if count >1 and current_node.next_node.nil?
+        #     while !current_node.nil?
+        #         list_string << current_node.data
+        #         current_node = current_node.next_node
+        #     end
+        #     return list_string    
+        # elsif count > 1 and current_node.next_node != nil
+        #     while !current_node.nil?
+        #         list_string << current_node.data + " "
+        #         current_node = current_node.next_node
+        #     end
+        #     return list_string
+       
+        # else
+        #     head.data
+        # end
+    end
+
+
+    
 end
