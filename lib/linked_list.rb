@@ -49,7 +49,7 @@ class LinkedList
     def prepend(data)
         new_head = Node.new(data)
         new_head.next_node = head
-        # require 'pry';binding.pry
+
         @head = new_head
     end
 
@@ -66,6 +66,7 @@ class LinkedList
             end
 
             insert_node.next_node = current_node.next_node
+            require 'pry';binding.pry
             current_node.next_node = insert_node
         end
     end
