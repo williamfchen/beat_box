@@ -12,7 +12,6 @@ RSpec.describe LinkedList do
     it "can append nodes" do
         list = LinkedList.new
         list.append("doop")
-
         expect(list.head.data).to eq("doop")
         expect(list.head.next_node).to eq(nil)
         expect(list.count).to eq(1)
@@ -39,7 +38,10 @@ RSpec.describe LinkedList do
 
         expect(list.to_string).to eq("dop plop suu")
         expect(list.count).to eq(3)
-        
+        # require 'pry';binding.pry
+        list.insert(1, "woo")
+
+        expect(list.to_string).to eq("dop woo plop suu")
     end
 
 end

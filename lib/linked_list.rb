@@ -7,6 +7,7 @@ class LinkedList
 
     def append(data)
         if @head == nil
+            # when do I need @
             @head = Node.new(data)
         else
             current_node = head
@@ -48,10 +49,22 @@ class LinkedList
     def prepend(data)
         new_head = Node.new(data)
         new_head.next_node = @head
+        # require 'pry';binding.pry
         @head = new_head
     end
 
-    # def insert()
+    def insert(position, data)
+        insert_node = Node.new(data)
+        current_node = head
+
+        (position - 1).times do
+            current_node = current_node.next_node
+        end
+
+        insert_node.next_node = current_node.next_node
+        current_node.next_node = insert_node
+    end
+
 
     
 end
