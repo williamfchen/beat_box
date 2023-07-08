@@ -6,7 +6,7 @@ class LinkedList
     end
 
     def append(data)
-        if @head.nil?
+        if @head == nil
             @head = Node.new(data)
         else
             current_node = head
@@ -22,7 +22,7 @@ class LinkedList
         current_node = head
         current_count = 0
         
-        while !current_node.nil?
+        while current_node != nil
             current_count += 1
             current_node = current_node.next_node
         end
@@ -34,24 +34,18 @@ class LinkedList
         current_node = head
         list_string = ""
 
-        # if count >1 and current_node.next_node.nil?
-        #     while !current_node.nil?
-        #         list_string << current_node.data
-        #         current_node = current_node.next_node
-        #     end
-        #     return list_string    
-        # elsif count > 1 and current_node.next_node != nil
-        #     while !current_node.nil?
-        #         list_string << current_node.data + " "
-        #         current_node = current_node.next_node
-        #     end
-        #     return list_string
-       
-        # else
-        #     head.data
-        # end
+        while current_node != nil
+            list_string << current_node.data
+            if current_node.next_node != nil
+                list_string << " "
+            end
+            current_node = current_node.next_node
+        end
+        
+        list_string
     end
 
 
     
 end
+
