@@ -45,6 +45,13 @@ class LinkedList
         list_string
     end
 
+    def prepend(data)
+        new_head = Node.new(data)
+        new_head.next_node = @head
+        @head = new_head
+    end
+
+    # def insert()
 
     
 end
