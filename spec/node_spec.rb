@@ -10,5 +10,6 @@ RSpec.describe Node do
         expect(node.next_node).to eq(nil)
     end
 
+
         
 end
