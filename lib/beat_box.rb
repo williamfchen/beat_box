@@ -11,7 +11,6 @@ class BeatBox
     end
 
     def append(data_string)
-        # require 'pry';binding.pry
         data_string.split.each do |data|
             if @approved_sounds.include?(data)
                 @list.append(data)
@@ -26,6 +25,11 @@ class BeatBox
             end
         end
     end
+    
+    def play
+        beats = list.to_string
+        system(`say -r #{rate} -v #{voice} #{beats}`)
+    end
 
     def all
         @list.to_string
@@ -34,13 +38,7 @@ class BeatBox
     def count
         @list.count
     end
-
-    def play
-        beats = list.to_string
-        # require 'pry';binding.pry
-        system(`say -r #{rate} -v #{voice} #{beats}`)
-    end
-
+    
     def reset_rate
         @rate = 500
     end
