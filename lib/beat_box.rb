@@ -2,7 +2,7 @@ class BeatBox
     attr_accessor :list, :rate, :voice
     attr_reader :approved_sounds 
 
-    def initialize(list = nil, rate = 500, voice = "Boing")
+    def initialize(data_string = nil, rate = 500, voice = "Boing")
         @list = LinkedList.new
         @rate = rate
         @voice = voice
