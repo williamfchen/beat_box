@@ -9,7 +9,7 @@ RSpec.describe LinkedList do
         expect(list.head).to eq(nil)
     end
 
-    it "can append nodes" do
+    it "can append, count, and to_string" do
         list = LinkedList.new
         list.append("doop")
         expect(list.head.data).to eq("doop")
@@ -59,10 +59,10 @@ RSpec.describe LinkedList do
         expect(list.includes?("deep")).to eq(true)
         expect(list.includes?("dep")).to eq(false)
         
-        list.pop
+        expect(list.pop).to eq("blop")
         expect(list.to_string).to eq("deep woo shi shu")
 
-        list.pop
+        expect(list.pop).to eq("shu")
         expect(list.to_string).to eq("deep woo shi")
     end
 

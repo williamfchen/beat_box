@@ -65,7 +65,6 @@ class LinkedList
             end
 
             insert_node.next_node = current_node.next_node
-            require 'pry';binding.pry
             current_node.next_node = insert_node
         end
     end
@@ -103,7 +102,7 @@ class LinkedList
             end
         end
 
-        false
+        return false
     end
 
     def pop

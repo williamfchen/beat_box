@@ -9,16 +9,12 @@ class BeatBox
         @rate = rate
         @voice = voice
         append(list)
-
-        # require 'pry';binding.pry
     end
 
     def append(data_string)
         data_string.split(" ").each do |data|
             if @approved_sounds.include?(data)
                 @list.append(data)
-                # require 'pry';binding.pry
-
             end
         end
     end
