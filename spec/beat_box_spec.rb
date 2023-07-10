@@ -21,25 +21,35 @@ RSpec.describe BeatBox do
     # it "plays" do
     #     bb = BeatBox.new
     #     bb.append("deep doo ditt woo hoo shu")
-
-    #     expect(bb.count).to eq(6)
-    #     expect(bb.list.count).to eq(6)
-    #     # require 'pry';binding.pry
-    #     bb.play
+    #     # require 'pry';binding.pry66    
+    #     # expect(bb.count).to eq(6)
+    #     # expect(bb.list.count).to eq(6)
+    #     # bb.play
     # end
 
     it "validates" do
         bb = BeatBox.new("deep")
         expect(bb.all).to eq("deep")
-        # require 'pry';binding.pry
 
         bb.append("Mississippi")
         expect(bb.all).to eq("deep")
         
         bb.prepend("tee tee tee Mississippi")
         expect(bb.all).to eq("tee tee tee deep")
+
+        # bb.play
         # require 'pry';binding.pry
     end
+
+    it "can modify rate and voice" do
+        bb = BeatBox.new("deep dop dop deep")
+        expect(bb.all).to eq("deep dop dop deep")
+        expect(bb.rate).to eq(500)
+
+        bb.rate = 100
+        expect(bb.rate).to eq(100)
+    end
+
 
 end
 
