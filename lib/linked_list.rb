@@ -88,7 +88,6 @@ class LinkedList
             end
 
         return find_string
-
     end
 
     def includes?(data)
@@ -125,9 +124,6 @@ class LinkedList
         removed_data = current_node.data
         previous_node.next_node = nil
         return removed_data
-    end
-
-
-    
+    end    
 end
 
