@@ -36,9 +36,6 @@ RSpec.describe BeatBox do
         
         bb.prepend("tee tee tee Mississippi")
         expect(bb.all).to eq("tee tee tee deep")
-
-        # bb.play
-        # require 'pry';binding.pry
     end
 
     it "can modify rate and voice" do
@@ -50,13 +47,14 @@ RSpec.describe BeatBox do
         expect(bb.rate).to eq(100)
 
         bb.reset_rate
-        # require 'pry';binding.pry
         expect(bb.rate).to eq(500)
         
         expect(bb.voice).to eq("Boing")
         bb.voice = "Daniel"
         expect(bb.voice).to eq("Daniel")
 
+        bb.reset_voice
+        expect(bb.voice).to eq("Boing")  
     end
 
 
