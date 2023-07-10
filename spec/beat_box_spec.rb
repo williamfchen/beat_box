@@ -45,9 +45,12 @@ RSpec.describe BeatBox do
         bb = BeatBox.new("deep dop dop deep")
         expect(bb.all).to eq("deep dop dop deep")
         expect(bb.rate).to eq(500)
+        expect(bb.voice).to eq("Boing")
 
         bb.rate = 100
         expect(bb.rate).to eq(100)
+
+        
     end
 
 
