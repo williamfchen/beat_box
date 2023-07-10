@@ -50,6 +50,7 @@ RSpec.describe BeatBox do
         expect(bb.rate).to eq(100)
 
         bb.reset_rate
+        # require 'pry';binding.pry
         expect(bb.rate).to eq(500)
         
         expect(bb.voice).to eq("Boing")
