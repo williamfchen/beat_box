@@ -45,6 +45,13 @@ class BeatBox
         system(`say -r #{rate} -v #{voice} #{beats}`)
     end
 
+    def reset_rate
+        rate = 500
+    end
+
+    def reset_voice
+        
+    end
 
 
 end
