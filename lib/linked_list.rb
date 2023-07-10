@@ -7,7 +7,6 @@ class LinkedList
 
     def append(data)
         if @head == nil
-            # when do I need @, doesn't seem to matter if it's after =
             @head = Node.new(data)
         else
             current_node = head
@@ -28,7 +27,7 @@ class LinkedList
             current_node = current_node.next_node
         end
 
-        current_count
+        return current_count
     end
 
     def to_string

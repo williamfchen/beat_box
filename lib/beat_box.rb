@@ -1,12 +1,14 @@
 class BeatBox
     attr_accessor :list
-    attr_reader :approved_sounds
+    attr_reader :approved_sounds, :rate
 
-    def initialize(list)
+    def initialize(list, rate = 500)
         @list = LinkedList.new
-        # list = append(list) creates app sound nil
-        @approved_sounds = ["tee", "dee", "deep", "dop", "bop", "boop", "la", "na"]
+        # list = append(list) creates approverd sound nil
+        @approved_sounds = ["tee", "dee", "deep", "dop", "bop", "boop", "la", "na", "plop", "hi", "ho", "hee", "hum"]
+        @rate = rate
         append(list)
+
         # require 'pry';binding.pry
     end
 
@@ -14,7 +16,7 @@ class BeatBox
         data_string.split(" ").each do |data|
             if @approved_sounds.include?(data)
                 @list.append(data)
-                require 'pry';binding.pry
+                # require 'pry';binding.pry
 
             end
         end
@@ -39,7 +41,7 @@ class BeatBox
     def play
         beats = list.to_string
         # require 'pry';binding.pry
-        `say -r 500 -v Boing #{beats}`
+        `say -r #{rate} -v Ralph #{beats}`
     end
 
 
