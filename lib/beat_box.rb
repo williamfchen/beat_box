@@ -26,19 +26,19 @@ class BeatBox
         end
     end
     
+    def count
+        @list.count
+    end
+
     def play
         beats = list.to_string
         system(`say -r #{rate} -v #{voice} #{beats}`)
     end
-
+    
     def all
         @list.to_string
     end
 
-    def count
-        @list.count
-    end
-    
     def reset_rate
         @rate = 500
     end
@@ -46,6 +46,4 @@ class BeatBox
     def reset_voice
         @voice = "Boing"
     end
-
-
 end
