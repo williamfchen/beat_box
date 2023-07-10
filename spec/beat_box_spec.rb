@@ -49,8 +49,6 @@ RSpec.describe BeatBox do
 
         bb.rate = 100
         expect(bb.rate).to eq(100)
-
-        
     end
 
 
