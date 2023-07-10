@@ -46,7 +46,7 @@ class BeatBox
     end
 
     def reset_rate
-        rate = 500
+        @rate = 500
     end
 
     def reset_voice
