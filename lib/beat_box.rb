@@ -2,17 +2,17 @@ class BeatBox
     attr_accessor :list, :rate, :voice
     attr_reader :approved_sounds 
 
-    def initialize(list, rate = 500, voice = "Boing")
+    def initialize(list = nil, rate = 500, voice = "Boing")
         @list = LinkedList.new
-        # list = append(list) creates approverd sound nil
-        @approved_sounds = ["tee", "dee", "deep", "dop", "bop", "boop", "la", "na", "plop", "hi", "ho", "hee", "hum"]
         @rate = rate
         @voice = voice
-        append(list)
+        @approved_sounds = ["tee", "dee", "deep", "dop", "doo", "ditt", "bop", "boop", "la", "na", "plop", "hi", "ho", "hee", "hum", "woo", "hoo", "shu"]
+        append(list) if list
     end
 
     def append(data_string)
-        data_string.split(" ").each do |data|
+        # require 'pry';binding.pry
+        data_string.split.each do |data|
             if @approved_sounds.include?(data)
                 @list.append(data)
             end
@@ -20,7 +20,7 @@ class BeatBox
     end
 
     def prepend(data_string)
-        data_string.split(" ").reverse_each do |data|
+        data_string.split.reverse_each do |data|
             if approved_sounds.include?(data)
                 @list.prepend(data)
             end
