@@ -44,14 +44,18 @@ RSpec.describe BeatBox do
     it "can modify rate and voice" do
         bb = BeatBox.new("deep dop dop deep")
         expect(bb.all).to eq("deep dop dop deep")
+        
         expect(bb.rate).to eq(500)
-        expect(bb.voice).to eq("Boing")
-
         bb.rate = 100
         expect(bb.rate).to eq(100)
 
+        bb.reset_rate
+        expect(bb.rate).to eq(500)
+        
+        expect(bb.voice).to eq("Boing")
         bb.voice = "Daniel"
         expect(bb.voice).to eq("Daniel")
+
     end
 
 
