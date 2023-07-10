@@ -50,7 +50,7 @@ class BeatBox
     end
 
     def reset_voice
-        
+        voice = "Boing"
     end
 
 
