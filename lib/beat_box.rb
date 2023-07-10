@@ -7,7 +7,7 @@ class BeatBox
         @rate = rate
         @voice = voice
         @approved_sounds = ["tee", "dee", "deep", "dop", "doo", "ditt", "bop", "boop", "la", "na", "plop", "hi", "ho", "hee", "hum", "woo", "hoo", "shu"]
-        append(list) if list
+        append(data_string) if data_string
     end
 
     def append(data_string)
