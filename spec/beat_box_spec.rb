@@ -3,7 +3,7 @@ require './lib/linked_list'
 require './lib/beat_box'
 
 RSpec.describe BeatBox do
-    describe "creates class, append, play, count" do
+    describe "iteration 3" do
         bb = BeatBox.new
 
         it "exists" do
@@ -28,7 +28,7 @@ RSpec.describe BeatBox do
         end
     end
 
-    describe "takes argument, validates sounds, all, prepend" do
+    describe "iteration 4" do
         bb = BeatBox.new("deep")
 
         it "exists" do
@@ -45,16 +45,18 @@ RSpec.describe BeatBox do
             expect(bb.all).to eq("deep")
         end
 
-        it "can prepend" do    
+        it "can prepend" do
+            require 'pry';binding.pry    
             bb.prepend("tee tee tee Mississippi")
             expect(bb.all).to eq("tee tee tee deep")
         end
     end
 
-    describe "rate, voice, reset" do
+    describe "iteration 4.5" do
         bb = BeatBox.new("deep dop dop deep")
 
         it "can rate" do
+            expect(bb.all).to eq("deep dop dop deep")
             expect(bb.rate).to eq(500)
             expect(bb.rate = 100).to eq(100)
         end
