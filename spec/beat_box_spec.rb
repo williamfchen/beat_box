@@ -45,8 +45,7 @@ RSpec.describe BeatBox do
             expect(bb.all).to eq("deep")
         end
 
-        it "can prepend" do
-            require 'pry';binding.pry    
+        it "can prepend" do  
             bb.prepend("tee tee tee Mississippi")
             expect(bb.all).to eq("tee tee tee deep")
         end
