@@ -2,7 +2,7 @@ require './lib/node'
 require './lib/linked_list'
 
 RSpec.describe LinkedList do
-    describe "creates class, append, count, to_string" do
+    describe "iteration 1" do
         list = LinkedList.new
 
         it "exists" do
@@ -32,7 +32,7 @@ RSpec.describe LinkedList do
         end
     end
     
-    describe "additional methods insert, prepend" do
+    describe "iteration 2" do
         list = LinkedList.new
         
         it "exists" do
@@ -53,7 +53,7 @@ RSpec.describe LinkedList do
             expect(list.to_string).to eq("dop woo plop suu")
         end
     end
-    describe "additional methods find, pop, includes?" do
+    describe "iteration 2.5" do
         list = LinkedList.new
         list.append("deep")
         list.append("woo")
